@@ -3,7 +3,7 @@
  * This example uses Express's router to separate the steam authentication routes
  */
 const bodyParser = require('body-parser')
-
+// https://radiant-lowlands-45367.herokuapp.com/
 var express = require('express')
   , passport = require('passport')
   , util = require('util')
@@ -169,7 +169,7 @@ app.get('/logout', function(req, res){
 // See views/auth.js for authentication routes
 app.use('/auth', authRoutes);
 
-app.listen(8000);
+app.listen(process.env.PORT || 5000);
 
 // Simple route middleware to ensure user is authenticated.
 //   Use this route middleware on any resource that needs to be protected.  If
