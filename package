@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "example": "node examples/signon/app.js",
+    "example-router": "node examples/signon/app-router.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@passport-next/passport": "^3.1.0",
+    "connect-firebase": "^0.0.9",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.5",
+    "passport": "^0.4.1",
+    "passport-openid": "^0.4.0",
+    "passport-steam": "^1.0.14",
+    "steam-web": "^0.7.0"
+  }
+}
