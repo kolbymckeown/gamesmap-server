@@ -139,7 +139,6 @@ app.get('/game/:name/:id/stats/:userId', function(req, res) {
   try {
   const { name, id, userId} = req.params
   
-    // TODO: 400 Error bad request?
   fetch(`https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v2/?key=${API_KEY}&steamid=${userId}&appid=${id}`
   , {
     method: "GET",
