@@ -101,7 +101,7 @@ app.get('/account', ensureAuthenticated, function(req, res){
   console.log(req.user);
   // res.status(200).json({user: req.user})
   fetch( // gets the list of games owned with info by the User
-    `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${req.user._json.steamid}&format=json&include_appinfo=1`
+    `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${req.user._json.steamid}&format=json&include_appinfo=1&include_played_free_games=1`
     , {
       method: "GET",
       credentials: "include",
