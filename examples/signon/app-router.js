@@ -19,7 +19,7 @@ var express = require('express')
   const CLIENT_DEV_URL = process.env.CLIENT_DEV_URL
   const SERVER_DEV_URL = process.env.SERVER_DEV_URL
   const fetch = require('node-fetch');
-  const { putNotes } = require('../../handlers');
+  const { putNotes, deleteNotes, getNotes } = require('../../handlers');
   // console.log(process.env.STEAM_API_KEY)
 
 
@@ -158,6 +158,8 @@ app.get('/game/:name/:id/stats/:userId', function(req, res) {
 })
 
 app.put('/games/notes', putNotes)
+app.patch('/games/notes/:userid/:game', deleteNotes)
+app.get('/games/notes/:userid/:game', getNotes)
 
 
 app.get('/logout', function(req, res){
