@@ -17,7 +17,7 @@ const options = {
 
 const putNotes = async (req, res) => {
   const { note, appid, userid } = req.body;
-  const filter = { appid, userid };
+  const filter = { appid: Number(appid), userid };
   // try {
   const client = await MongoClient(MONGO_URI, options);
   await client.connect();
