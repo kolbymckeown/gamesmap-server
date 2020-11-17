@@ -12,15 +12,12 @@ var express = require('express')
   , authRoutes = require('./routes/auth')
   , cors = require('cors');
   require('dotenv').config()
-  console.log(process.env.PORT, process.env.NODE_ENV)
   // const { PORT } = require('./keys.js')
-// console.log(PORT)
   const API_KEY = process.env.STEAM_API_KEY
   const CLIENT_DEV_URL = process.env.CLIENT_DEV_URL
   const SERVER_DEV_URL = process.env.SERVER_DEV_URL
   const fetch = require('node-fetch');
   const { putNotes, deleteNotes, getNotes } = require('../../handlers');
-  // console.log(process.env.STEAM_API_KEY)
 
 
 // Passport session setup.
@@ -98,7 +95,6 @@ app.get('/test', function(req, res) {
 
 app.get('/account', ensureAuthenticated, function(req, res){
   // res.render('account', { user: req.user });
-  console.log(req.user);
   // res.status(200).json({user: req.user})
   fetch( // gets the list of games owned with info by the User
     `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${req.user._json.steamid}&format=json&include_appinfo=1&include_played_free_games=1`
@@ -119,7 +115,6 @@ app.get('/account', ensureAuthenticated, function(req, res){
 app.get('/game/:name/:id', function(req, res) {
   
   const { name, id } = req.params
-  console.log(name, id)
   fetch(`https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${id}&format=json`
   , {
     method: "GET",
@@ -131,7 +126,6 @@ app.get('/game/:name/:id', function(req, res) {
     },
     })
     .then((res) => res.json())
-    // .then(json => console.log(json.appnews.newsitems))
     .then((json) => res.status(200).json({ body: json.appnews.newsitems }))
 }) 
 

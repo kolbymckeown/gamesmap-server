@@ -14,10 +14,8 @@ const API_KEY = process.env.STEAM_API_KEY;
 // 		`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=76561197960434622&format=json`
 // 	)
 // 		.then((res) => res.json())
-// 		.then((list) => console.log(list.response.game_count));
 // });
 // // this is a test
 
 // app.listen(port, () => {
-// 	console.log(`Example app listening on port ${port}!`);
 // });
