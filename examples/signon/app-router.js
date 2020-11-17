@@ -171,7 +171,7 @@ app.get('/logout', function(req, res){
 app.use('/auth', authRoutes);
 
 // app.listen(process.env.PORT || 5000); <- Heroku
-app.listen(8000)
+app.listen(process.env.PORT || 8000)
 // Simple route middleware to ensure user is authenticated.
 //   Use this route middleware on any resource that needs to be protected.  If
 //   the request is authenticated (typically via a persistent login session),
