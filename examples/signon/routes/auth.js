@@ -25,6 +25,7 @@ router.get('/steam/return',
   //     next();
   // }, 
   passport.authenticate('steam', { failureRedirect: '/', successRedirect: "http://localhost:3000/games" }),
+  
   // function(req, res) {
   //   res.redirect('/');
   // }
