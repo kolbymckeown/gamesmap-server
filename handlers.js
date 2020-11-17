@@ -43,6 +43,7 @@ const putNotes = async (req, res) => {
 // TODO: Delete the individual note in the array ie [0] or [4] $pull ?
 
 const getNotes = async (req, res) => {
+  try {
   const { userid, game } = req.params;
   
   const filter = { userid, appid: Number(game) };
@@ -55,6 +56,9 @@ const getNotes = async (req, res) => {
   // TODO: Mongo stuff
   res.status(200).json({ status: 200, data: r.notes })
   client.close()
+  } catch(e){
+    console.log(e)
+  }
 }
 
 
