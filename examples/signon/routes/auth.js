@@ -24,7 +24,7 @@ router.get('/steam/return',
   //     req.url = req.originalUrl;
   //     next();
   // }, 
-  passport.authenticate('steam', { failureRedirect: '/', successRedirect: "http://localhost:3000/games" }),
+  passport.authenticate('steam', { failureRedirect: '/', successRedirect: "https://gamesmap-1ll584dt3.vercel.app/games" }),
   
   // function(req, res) {
   //   res.redirect('/');
